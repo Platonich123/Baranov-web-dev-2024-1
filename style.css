@@ -181,4 +181,41 @@ footer a:hover {
     th, td {
         padding: 6px;
     }
+
+    /* Стили для экрана с шириной до 600px */
+    header h1 {
+        font-size: 20px;
+    }
+
+    .main-menu a {
+        font-size: 16px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+    footer a {
+        font-size: 16px;
+    }
 }
