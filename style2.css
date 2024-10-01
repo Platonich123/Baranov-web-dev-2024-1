@@ -14,6 +14,12 @@ body {
     min-height: 100vh;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
     background-color: black;
     color: white;
@@ -28,11 +34,12 @@ header h1 {
 
 .main-menu ul {
     list-style: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .main-menu li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -70,51 +77,57 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section img {
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    overflow: hidden;
+    text-align: center;
+    padding: 30px 40px;
+    background-color: white;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    border: 2px solid tomato;
+}
+
+.menu-item:hover button {
+    background-color: tomato;
+}
+
+.menu-img {
     width: 100%;
     height: auto;
+    border-radius: 35px;
     margin-bottom: 20px;
 }
 
-section p {
+.menu-item p {
     font-size: 18px;
     color: #555;
+    margin: 5px 0;
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.menu-item button {
+    background-color: #f1eee9;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
+.menu-item button:hover {
+    background-color: #004494;
 }
 
 footer {
@@ -140,8 +153,12 @@ footer a:hover {
 }
 
 @media (max-width: 800px) {
+    .menu-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .main-menu ul {
-        justify-content: space-between;
+        justify-content: center;
     }
 
     header h1 {
@@ -161,5 +178,9 @@ footer a:hover {
 
     section h2 {
         text-align: center;
+    }
+
+    .menu-section {
+        grid-template-columns: 1fr;
     }
 }
