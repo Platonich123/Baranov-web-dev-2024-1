@@ -72,7 +72,7 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section img {
+.responsive-img {
     width: 100%;
     height: auto;
     margin-bottom: 20px;
