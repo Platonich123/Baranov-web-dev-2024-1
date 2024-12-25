@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-menu li {
+    display: inline;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.main-menu a:hover {
+    color: #0056b3;
+}
+
+.main-menu a.active {
+    color: tomato;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px; /* Фиксированная максимальная ширина */
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #e0f7fa; /* Зеленый фон */
+    color: #004d40; /* Зеленый текст */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #a5d6a7; /* Светло-зеленый фон при наведении */
+}
+
+.filter-button.active {
+    background-color: rgba(0, 123, 0, 0.5); /* Прозрачный зеленый фон при выделении */
+    color: white;
+}
+
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматическое заполнение сетки */
+    gap: 20px;
+}
+
+.menu-item {
+    width: 300px; /* Фиксированная ширина */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    overflow: hidden;
+    text-align: center;
+    padding: 30px 40px;
+    background-color: white;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item:hover {
+    box-shadow: 0 0 0 5px tomato;
+}
+
+.menu-item:hover button {
+    background-color: tomato;
+}
+
+.menu-img {
+    width: 100%; /* Занимает всю ширину контейнера */
+    height: 200px; /* Фиксированная высота */
+    object-fit: cover; /* Обрезает изображение, чтобы сохранить пропорции */
+    border-radius: 35px;
+    margin-bottom: 20px;
+}
+
+.menu-item p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.menu-item button {
+    background-color: #f1eee9;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.menu-item button:hover {
+    background-color: #004494;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+@media (max-width: 800px) {
+    .menu-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-menu ul {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .main-menu li {
+        flex: 1;
+        text-align: center;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-menu a {
+        font-size: 22px;
+    }
+
+    section h2 {
+        text-align: center;
+    }
+
+    .menu-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+#order-form {
+    margin-top: 40px;
+}
+
+#order-form h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#order-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.order-block, .client-block {
+    flex: 1;
+    min-width: 300px;
+}
+
+.order-block h3, .client-block h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.order-block label, .client-block label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.order-block select, .client-block input, .client-block textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Поле для комментария должно быть такой же ширины, как селекты над ним */
+.order-block textarea {
+    width: 100%;
+    height: 100px;
+}
+
+/* Добавьте это в ваш CSS файл */
+.order-block strong {
+    display: block;
+    margin-top: 10px; /* Увеличиваем верхний отступ */
+    font-weight: bold;
+}
+
+.order-block p {
+    margin: 5px 0 15px; /* Увеличиваем нижний отступ */
+}
+
+.order-block .comment-input {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px; /* Увеличиваем верхний отступ */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-left: -285px; /* Сдвигает текст влево на 10 пикселей */
+    margin-top: -10px;
+}
+
+.form-group input {
+    margin-left: -286px;
+}
+
+.client-block fieldset {
+    margin-bottom: 15px;
+    border: none;
+}
+
+.client-block legend {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.client-block button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.client-block button[type="reset"] {
+    background-color: #dc3545;
+}
+
+.client-block button:hover {
+    background-color: #0056b3;
+}
+
+.menu-item.selected {
+    box-shadow: 0 0 0 5px tomato;
+}
+
+#combos {
+    margin-bottom: 40px;
+}
+
+#combos h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.combos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    gap: 40px; /* Увеличиваем расстояние между элементами */
+}
+
+.combo-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+}
+
+.combo-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.combo-dish img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.combo-dish img:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.combo-dish p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.combo-dish p:last-child {
+    font-size: 14px;
+    color: #555;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    border-radius: 10px; /* Скругленные углы */
+    max-width: 400px; /* Максимальная ширина */
+    width: 100%; /* Ширина 100% для адаптивности */
+}
+
+.notification h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333; /* Цвет текста */
+}
+
+.notification p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555; /* Цвет текста */
+}
+
+.notification button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Центрирование кнопки */
+}
+
+.notification button:hover {
+    background-color: tomato;
+}
+
+.notification button .thumbs-up {
+    margin-left: 8px; /* Отступ слева от смайлика */
+}
+
+.notification input {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.notification textarea {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.notification .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.notification .form-group label {
+    margin-left: 10px; /* Отступ слева */
+}
+
+.notification .form-group input {
+    margin-left: 10px; /* Отступ слева */
+}
+
+.notification fieldset {
+    margin-bottom: 15px;
+    border: none;
+}
+
+.notification legend {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.lunch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.lunch-option {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lunch-option:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lunch-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.lunch-dish img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.dessert-info {
+    font-size: 14px;
+    color: #777;
+}
